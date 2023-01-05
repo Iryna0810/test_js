@@ -44,4 +44,9 @@ console.log(Number(salary.toFixed(2)));
 // salary = Number(salary.toFixed(2));
 // console.log(salary);
 
-
+const guestName = "Iryna Vakulenko";
+const roomNumber = 207;
+// const greeting = 'Welcome ${guestName}, your room number is ${roomNumber}!';
+// const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`; 
+const greeting = 'Welcome ${}, your room number is ${roomNmber}!';
+console.log(greeting);
