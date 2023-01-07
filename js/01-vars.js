@@ -57,3 +57,29 @@ const productName = 'Repair droid';
 console.log(productName.slice(2, 13));
 
 sayHi();
+
+
+
+function multiply(x, y, z) {
+  // console.log("Код до return виконується звичайним чином");
+
+  // Повертаємо результат виразу множення
+  return x + y + z;
+
+  console.log("Цей лог ніколи не виконається, він стоїть після return");
+}
+let result = multiply(2, 3, 5);
+console.log(result);
+
+result = multiply(17, 6, 25);
+console.log(result);
+
+result = multiply(25,30,6);
+console.log(result);
+
+function add(a, b, c) {
+return a + b + c;
+}
+
+console.log(add(15, 27, 10));
+
