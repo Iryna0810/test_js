@@ -43,10 +43,17 @@ console.log(Number(salary.toFixed(2)));
 
 // salary = Number(salary.toFixed(2));
 // console.log(salary);
+function sayHi() {
+  console.log("Hello, this is my first function!")
+}
 
-const guestName = "Iryna Vakulenko";
+const guestName = 'Iryna Vakulenko';
 const roomNumber = 207;
-// const greeting = 'Welcome ${guestName}, your room number is ${roomNumber}!';
-// const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`; 
-const greeting = 'Welcome ${}, your room number is ${roomNmber}!';
-console.log(greeting);
+// const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`;
+const greeting = `Welcome ${guestName}, your room number is ${roomNumber}!`;
+    console.log(greeting);
+
+const productName = 'Repair droid';
+console.log(productName.slice(2, 13));
+
+sayHi();
