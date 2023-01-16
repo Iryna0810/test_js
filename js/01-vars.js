@@ -83,3 +83,8 @@ return a + b + c;
 
 console.log(add(15, 27, 10));
 
+const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+console.log(clients.slice(-4));
+
+const fruits = ["apple", "plum", "pear", "orange"];
+console.table(fruits);
