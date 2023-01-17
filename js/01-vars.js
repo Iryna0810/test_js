@@ -83,8 +83,33 @@ return a + b + c;
 
 console.log(add(15, 27, 10));
 
-const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
-console.log(clients.slice(-4));
+// const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// console.log(clients.slice(-4));
 
-const fruits = ["apple", "plum", "pear", "orange"];
-console.table(fruits);
+// const fruits = ["apple", "plum", "pear", "orange"];
+// console.table(fruits);
+
+// const clients = ["Mango", "Ajax", "Poly"];
+// const lastIndexClients = clients.length -2;
+// const deletedClients = clients.splice(1, lastIndexClients);
+// console.log(deletedClients);
+// for (let i = 0; i < clients.length; i += 1) {
+//   console.log(clients[0]&&clients[lastIndexClients]);
+// }
+// for (client of clients)
+// console.log (`${clients[0]}, ${clients[lastIndexClients]}`);
+
+function getExtremeElements(array) {
+  // Change code below this line
+const lastElementIndex = array.length - 2;
+  // Change code above this line
+  const deletedClients = array.splice(1, lastElementIndex);
+return array;
+}
+//  for (let i = 1; i < lastElementIndex; i += 1) {
+//     return array[i];
+//   }
+// }
+console.log(getExtremeElements([1, 2, 3, 4, 5]));
+console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
