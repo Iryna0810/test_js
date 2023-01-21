@@ -113,3 +113,40 @@ return array;
 console.log(getExtremeElements([1, 2, 3, 4, 5]));
 console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
 console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
+
+
+function getSum() {
+  console.log(arguments);
+  let sum = 0;
+
+  for (let number of arguments) {
+    sum += number;
+  }
+
+  return sum;
+}
+
+const sum1 = getSum(100, 500, 420, 631, 46, 4545);
+console.log(sum1);
+
+
+function findLongestWord(string) {
+  // Change code below this line
+const stringArray = string.split(" ");
+  // console.log(stringArray);
+  let longestWord = stringArray[0];
+  // const arrayLength = stringArray.length - 1;
+  
+  for (const wordArray of stringArray) {
+    // let wordArray = "";
+    if (longestWord.length > wordArray.length) {
+      continue;
+    }
+    longestWord = wordArray;
+    return longestWord;
+  }
+ 
+
+  // Change code above this line
+}
+console.table(findLongestWord("The quick brown fox jumped over the lazy dog"));
