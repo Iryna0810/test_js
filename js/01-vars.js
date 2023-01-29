@@ -150,3 +150,20 @@ const stringArray = string.split(" ");
   // Change code above this line
 }
 console.table(findLongestWord("The quick brown fox jumped over the lazy dog"));
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Change code below this line
+for (const key in apartment) {
+console.log(key);
+  console.log(apartment[key]);
+  keys.push(key);
+  values.push(apartment[key]);
+}
+console.log(keys);
+console.log(values);
