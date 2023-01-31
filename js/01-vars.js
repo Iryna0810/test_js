@@ -99,71 +99,142 @@ console.log(add(15, 27, 10));
 // for (client of clients)
 // console.log (`${clients[0]}, ${clients[lastIndexClients]}`);
 
-function getExtremeElements(array) {
-  // Change code below this line
-const lastElementIndex = array.length - 2;
-  // Change code above this line
-  const deletedClients = array.splice(1, lastElementIndex);
-return array;
-}
-//  for (let i = 1; i < lastElementIndex; i += 1) {
-//     return array[i];
-//   }
+// function getExtremeElements(array) {
+//   // Change code below this line
+// const lastElementIndex = array.length - 2;
+//   // Change code above this line
+//   const deletedClients = array.splice(1, lastElementIndex);
+// return array;
 // }
-console.log(getExtremeElements([1, 2, 3, 4, 5]));
-console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
-console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
+// //  for (let i = 1; i < lastElementIndex; i += 1) {
+// //     return array[i];
+// //   }
+// // }
+// console.log(getExtremeElements([1, 2, 3, 4, 5]));
+// console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+// console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
 
 
-function getSum() {
-  console.log(arguments);
-  let sum = 0;
+// function getSum() {
+//   console.log(arguments);
+//   let sum = 0;
 
-  for (let number of arguments) {
-    sum += number;
-  }
+//   for (let number of arguments) {
+//     sum += number;
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-const sum1 = getSum(100, 500, 420, 631, 46, 4545);
-console.log(sum1);
+// const sum1 = getSum(100, 500, 420, 631, 46, 4545);
+// console.log(sum1);
 
 
-function findLongestWord(string) {
-  // Change code below this line
-const stringArray = string.split(" ");
-  // console.log(stringArray);
-  let longestWord = stringArray[0];
-  // const arrayLength = stringArray.length - 1;
+// function findLongestWord(string) {
+//   // Change code below this line
+// const stringArray = string.split(" ");
+//   // console.log(stringArray);
+//   let longestWord = stringArray[0];
+//   // const arrayLength = stringArray.length - 1;
   
-  for (const wordArray of stringArray) {
-    // let wordArray = "";
-    if (longestWord.length > wordArray.length) {
-      continue;
-    }
-    longestWord = wordArray;
-    return longestWord;
-  }
+//   for (const wordArray of stringArray) {
+//     // let wordArray = "";
+//     if (longestWord.length > wordArray.length) {
+//       continue;
+//     }
+//     longestWord = wordArray;
+//     return longestWord;
+//   }
  
 
-  // Change code above this line
-}
-console.table(findLongestWord("The quick brown fox jumped over the lazy dog"));
+//   // Change code above this line
+// }
+// console.table(findLongestWord("The quick brown fox jumped over the lazy dog"));
 
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
-const keys = [];
-const values = [];
-// Change code below this line
-for (const key in apartment) {
-console.log(key);
-  console.log(apartment[key]);
-  keys.push(key);
-  values.push(apartment[key]);
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
+// // Change code below this line
+// for (const key in apartment) {
+// console.log(key);
+//   console.log(apartment[key]);
+//   keys.push(key);
+//   values.push(apartment[key]);
+// }
+// console.log(keys);
+// console.log(values);
+
+const a = { x:1, y:2, g:{ hello: 'World' }, };
+const b = { x:0, z:3 };
+// const c = Object.assign({}, a, b);
+
+const c = {
+  ...a, 
+  x: 12,
+  ...b,
+  y:20,
 }
-console.log(keys);
-console.log(values);
+console.log(c);
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+// let propArray = [];
+// function getAllPropValues(propName) {
+//   for (const product of products) {
+//     const { name } = product;
+//     console.log(name);
+//      if (propName === name)
+//       propArray.push(product.key);
+//     return propArray;
+//   }
+  
+// }
+// console.log(getAllPropValues("price"));
+
+// const product = {
+//   username: "Radar",
+//   price: 1300,
+//   quantity: 4
+// };
+// const { username, price, quantity } = product;
+
+// console.log(username);
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+
+
+function getAllPropValues(propName) {
+
+  let propArray = [];
+  for (let product of products) {
+    if (Object.keys(product).includes(propName))
+      propArray.push(product[propName])
+  }
+  return propArray;
+}
+console.log(getAllPropValues('price'));
+ 
+
+
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+
+// bookShelf.getBooks();
