@@ -263,6 +263,7 @@ const atTheOldToad = {
     potions.push(newPotion);
     }
   },
+  
   // removePotion(potionName) {
   //   const { potions } = this;
   //  for (let i = 0; i < potions.length; i +=1){
