@@ -217,16 +217,16 @@ const products = [
 
 
 
-function getAllPropValues(propName) {
+// function getAllPropValues(propName) {
 
-  let propArray = [];
-  for (let product of products) {
-    if (Object.keys(product).includes(propName))
-      propArray.push(product[propName])
-  }
-  return propArray;
-}
-console.log(getAllPropValues('price'));
+//   let propArray = [];
+//   for (let product of products) {
+//     if (Object.keys(product).includes(propName))
+//       propArray.push(product[propName])
+//   }
+//   return propArray;
+// }
+// console.log(getAllPropValues('price'));
  
 
 
@@ -239,30 +239,30 @@ console.log(getAllPropValues('price'));
 
 // bookShelf.getBooks();
 
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Dragon breath", price: 780 },
-    { name: "Stone skin", price: 520 },
-  ],
-//   // Change code below this line
-// const {name,price} = newPotion
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+// //   // Change code below this line
+// // const {name,price} = newPotion
   
-  getPotions() {
-    const { potions } = this;
-    return potions;
-  },
+//   getPotions() {
+//     const { potions } = this;
+//     return potions;
+//   },
 
-  addPotion(newPotion) {   
-    const { potions } = this;
-    for (let potion of potions) {
-       const {name} = potion;
-       if (newPotion === name ) {
-      return `Error! Potion ${newPotion} is already in your inventory!`;
-    }
-    potions.push(newPotion);
-    }
-  },
+//   addPotion(newPotion) {   
+//     const { potions } = this;
+//     for (let potion of potions) {
+//        const {name} = potion;
+//        if (newPotion === name ) {
+//       return `Error! Potion ${newPotion} is already in your inventory!`;
+//     }
+//     potions.push(newPotion);
+//     }
+//   },
   
   // removePotion(potionName) {
   //   const { potions } = this;
@@ -286,9 +286,9 @@ const atTheOldToad = {
   //   this.potions.splice(potionIndex, 1, newName);
   // },
   // Change code above this line
-};
+
 // console.log(atTheOldToad.getPotions());
 // console.log(atTheOldToad.updatePotionName("Dragon breath", "Dragon teeth"));
 // console.table(atTheOldToad.potions);
-console.log(atTheOldToad.addPotion("Green apple"));
-console.log(atTheOldToad.potions);
+// console.log(atTheOldToad.addPotion("Green apple"));
+// console.log(atTheOldToad.potions);
