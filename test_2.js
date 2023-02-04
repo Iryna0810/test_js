@@ -54,3 +54,27 @@ return callback(pizzaName);
 makeMessage('Royal Grand', makePizza);
 
 makeMessage('Ultracheese', deliverPizza);
+let totalArray = [];
+const firstNumbers = [25, 22, 456, 789, 3];
+const numbers = [22, 5, 6667, 456, 89];
+
+numbers.forEach((number, index) => {
+  console.log(number);
+  if (firstNumbers.includes(number)) {
+    totalArray.push(number);
+  }
+  return totalArray;
+});
+console.table(totalArray);
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  firstArray.forEach((element, index) => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
+    }
+  });
+
+   return commonElements;
+};
+  console.table(getCommonElements([1, 2, 3], [2, 4]));
