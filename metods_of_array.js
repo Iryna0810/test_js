@@ -323,3 +323,134 @@ colorPickerOptions.find((option) => option.label === "white"); // undefined
 
 // Усі елементи більші або дорівнюють нулю? - ні
 [1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+
+
+/*--------------------REDUCE------------------*/
+// массив.reduce((previousValue, element, index, array) => {
+//   // Тіло колбек-функції
+// }, initialValue);
+
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log(total); // 32
+
+// # Спочатку метод reduce() створює внутрішню змінну-акумулятор і
+// # присвоює їй значення параметра initialValue або першого елемента
+// # масиву, що перебирається, якщо initialValue не задане.
+// previousValue = 0
+
+// # Потім колбек-функція викликається для кожного елемента масиву. Поточне значення
+// # параметра previousValue - це те, що повернула колбек-функція на минулій ітерації.
+// Ітерація 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Ітерація 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Ітерація 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Ітерація 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Ітерація 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # Після завершення перебирання всього масиву, метод reduce() повертає значення акумулятора.
+// Результат - 32
+
+// Тобто метод reduce() використовується, коли необхідно взяти «багато» і привести до «одного». У повсякденних завданнях його застосування зводиться до роботи з числами.
+
+const students100 = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+// Назва акумулятора може бути довільною, це просто параметр функції
+const totalScore = students100.reduce((total, student) => {
+  return total + student.score;
+}, 0);
+
+const averageScore = totalScore / students100.length;
+
+newUsers = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+// Change code below this line
+// Change code below this line
+const calculateTotalBalance = users => {
+  return users.reduce( 
+     (totalbalance, user) => {return totalbalance + user.balance}, 0);}
+// Change code above this line
+console.log(calculateTotalBalance(newUsers) )
+  
+// Change code below this line
+const getTotalFriendCount = newUsers => {
+   return newUsers.reduce(
+     (totalFriends, user) => {
+      totalFriends.push(...user.friends);
+       return totalFriends;
+     }, 0
+   )
+};
+
+console.log(getTotalFriendCount(newUsers));
