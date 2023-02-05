@@ -45,3 +45,17 @@ const calculateAverage = (...args) => {
     return total / args.length;
 };
 console.log(calculateAverage(1, 2, 3, 4, 5));
+
+
+const students = [
+  { name: "Манго", courses: ["математика", "фізика"] },
+  { name: "Полі", courses: ["інформатика", "математика"] },
+  { name: "Ківі", courses: ["фізика", "біологія"] },
+];
+
+const allCourses = students.flatMap(student => student.courses);
+
+const unuqueCourses = allCourses.filter(
+    (course, index, array) => array.indexOf(course) === index
+);
+console.log(unuqueCourses);
