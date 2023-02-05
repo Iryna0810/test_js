@@ -179,7 +179,7 @@ console.table(getCarsWithType(cars, 'sedan'));
 
 const LOW_SCORE = 50;
 const HIGH_SCORE = 80;
-const students = [
+const studentsScore = [
   { name: "Mango", score: 83 },
   { name: "Poly", score: 59 },
   { name: "Ajax", score: 37 },
@@ -187,16 +187,139 @@ const students = [
   { name: "Houston", score: 64 },
 ];
 
-const best = students.filter(student => student.score >= HIGH_SCORE);
+const best = studentsScore.filter(student => student.score >= HIGH_SCORE);
 console.log(best); // Масив об'єктів з іменами Mango і Kiwi
 
-const worst = students.filter(student => student.score < LOW_SCORE);
+const worst = studentsScore.filter(student => student.score < LOW_SCORE);
 console.log(worst); // Масив з одним об'єктом Ajax
 
 // В колбек-функції зручно деструктуризувати властивості об'єкта
-const average = students.filter(
+const average = studentsScore.filter(
   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
 );
 console.log(average); // Масив об'єктів з іменами Poly і Houston
 
+
+const students = [
+  { name: "Манго", courses: ["математика", "фізика"] },
+  { name: "Полі", courses: ["інформатика", "математика"] },
+  { name: "Ківі", courses: ["фізика", "біологія"] },
+];
+
+const allCourses = students.flatMap(student => student.courses);
+// ['математика', 'фізика', 'інформатика', 'математика', 'фізика', 'біологія'];
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+);
+
+const uniqueSortedCourses = students
+  .flatMap(student => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses); // ['біологія', 'інформатика', 'література', 'математика', 'фізика']
+
+const users1 = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+]
+
+const getFriends = (users1) => {
+  const friendArray = users1.flatMap(user => user.friends); 
+  friendArray.filter((friend, index,array) => array.indexOf(friend) === index);
+};
+// Change code above this line
+console.log(getFriends(users1));
 /*----------------------метод FIND-----------------*/
+// масив.find((element, index, array) => {
+//   // Тіло колбек-функції
+// });
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+colorPickerOptions.find((option) => option.label === "white"); // undefined
+
+/*------------------EVERY-----------------------------*/
+// масив.every((element, index, array) => {
+//   // Тіло колбек-функції
+// });
+// Усі елементи більші або дорівнюють нулю? - так
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Усі елементи більші або дорівнюють нулю? - ні
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
