@@ -444,13 +444,97 @@ const calculateTotalBalance = users => {
 console.log(calculateTotalBalance(newUsers) )
   
 // Change code below this line
-const getTotalFriendCount = newUsers => {
-   return newUsers.reduce(
-     (totalFriends, user) => {
-      totalFriends.push(...user.friends);
-       return totalFriends;
-     }, 0
-   )
-};
+const getTotalFriend = newUsers =>
+  newUsers.reduce((totalFriends, user) => {
+    totalFriends.push(...user.friends);
 
-console.log(getTotalFriendCount(newUsers));
+    return totalFriends;
+  }, []);
+console.log(getTotalFriend(newUsers));
+
+/*-----------------SORT---------------------------*/
+const scores = [27, 2, 41, 4, 7, 3, 75];
+scores.sort();
+console.log(scores); // [2, 27, 3, 4, 41, 7, 75]
+
+const studentsName = ["Віка", "Андрій", "Олег", "Юля", "Борис", "Катя"];
+studentsName.sort();
+console.log(studentsName); // [ 'Андрій', 'Борис', 'Віка', 'Катя', 'Олег', 'Юля' ]
+
+const scores1 = [61, 19, 74, 35, 92, 56];
+const ascendingScores1 = [...scores1].sort();
+
+console.log(scores); // [61, 19, 74, 35, 92, 56]
+console.log(ascendingScores1); // [19, 35, 56, 61, 74, 92]
+
+const scoresNew = [61, 19, 74, 35, 92, 56];
+const ascendingScores2 = [...scoresNew].sort((a, b) => a - b);
+console.log(ascendingScores2); // [19, 35, 56, 61, 74, 92]
+
+const scores2 = [61, 19, 74, 35, 92, 56];
+const descendingScores = [...scores2].sort((a, b) => b - a);
+console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+
+const students3 = ["Віка", "Андрій", "Олег", "Юля", "Борис", "Катя"];
+
+const inAlphabetOrder = [...students3].sort((a, b) => a.localeCompare(b));
+console.log(inAlphabetOrder); // ['Андрій', 'Борис', 'Віка', 'Катя', 'Олег', 'Юля']
+
+const inReversedOrder = [...students3].sort((a, b) => b.localeCompare(a));
+console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Віка', 'Борис', 'Андрій']
+
+const students4 = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+];
+
+const inAscendingScoreOrder = students4.sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+const inDescendingScoreOrder = students4.sort(
+  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+);
+
+const inAlphabeticalOrder = students4.sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);
+console.log([...students4]);
+
+// const sortByName = users => {
+// return [...users].sort((firstName, secondName) => firstName.name.localeCompare(secondName.name)
+// )
+// };
+// console.log(sortByName());
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+
+const MIN_BOOK_RATING = 8;
+
+const names = books.filter(book => book.rating > MIN_BOOK_RATING).map(book => book.author)
+  .sort((firstName,secondName) => firstName.localeCompare(secondName));
+console.log(names);
+
