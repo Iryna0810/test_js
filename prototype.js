@@ -41,6 +41,7 @@ const Car = function ({ brand, model, price } = {}) {
     }
 }
 
+
 Car.prototype.sayHi = function () {
     console.log('Car.prototype.sayHi -> this', this);
 };
@@ -73,3 +74,53 @@ const myCar3 = new Car({
 console.log(myCar);
 console.log(myCar2);
 console.log(myCar3);
+
+
+/*---------------metod CALL-----------*/
+function getDatta() {
+    console.log(`${this.userName} is ${this.age} years old`)
+}
+
+const userFirst = {
+    userName: 'Max',
+    age: 29,
+}
+getDatta.call(userFirst);
+
+
+/*-------------------metod APPLY------------------*/
+function greetGuest(greeting) {
+    console.log(`${greeting}, ${this.userName}.`);
+}
+
+const secondUser = {
+    userName: 'Iryna',
+    age: 40,
+};
+
+greetGuest.apply(secondUser, [`Hello`])
+
+
+class Storage  {
+constructor (items) {
+   this.items = items; 
+  }
+  getItems() {
+return this.items;
+}
+addItem (newItem) {
+    this.items.push(newItem);
+}
+removeItem = function (itemToRemove) {
+const itemRemoveIndex = this.items.findIndex((item) => item === itemToRemove);
+this.items.splice(itemRemoveIndex, 1);
+  
+}
+}
+
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
