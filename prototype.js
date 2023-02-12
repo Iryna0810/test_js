@@ -115,6 +115,88 @@ const fordAuto = {
 
 fordAuto.getInfo();
 
+/*--------------calculator--------------------*/
+const calculator = {
+    a: 0,
+    b: 0,
+    
+    wright(a, b) {
+        this.a = a;
+        this.b = b;
+    },
+    getSum() {
+        return this.a + this.b;
+    },
+    getMulty() {
+        return this.a * this.b;
+    },
+};
+
+calculator.wright(500, 700);
+console.log(calculator);
+console.log(calculator.getSum());
+
+/*----------------------ladder-------------------------------*/
+
+const ladder = {
+    step: 0,
+
+    up() {
+        this.step += 1;
+
+        return this;
+    },
+    down() {
+        this.step -= 1;
+
+         return this;
+    },
+    showStep() {
+        console.log(this.step);
+    },
+};
+
+ladder.up();
+ladder.up();
+ladder.up();
+ladder.up();
+ladder.down();
+
+ladder.showStep();
+
+// debugger;
+ladder.up().up().up().showStep();
+
+/*-------------------task---------------------*/
+const chopShop = {
+    stones: [
+        { name: "Emerald", price: 1300, quantity: 4 },
+        { name: "Diamond", price: 2700, quantity: 3 },
+        { name: "Sapphire", price: 1400, quantity: 7 },
+        { name: "Ruby", price: 800, quantity: 2 },
+    ],
+
+    calcTotalPrice(stoneName) {
+        const stoneObj = this.stones.find(
+        ({ name }) => name.toLowerCase() === stoneName.trim().toLowerCase());
+     
+        if (!stoneObj) {
+            return `Каміння з назвою ${stoneName} не існує!`;
+        }
+        console.log(stoneObj);
+        
+        const { price, quantity } = stoneObj;
+        return price * quantity;
+    },
+};
+
+
+console.log(chopShop.calcTotalPrice("Emerald"));
+console.log(chopShop.calcTotalPrice("Sapphire  "));
+
+
+/*--------------------------------task------------------------------*/
+
 class Storage  {
 constructor (items) {
    this.items = items; 
