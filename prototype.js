@@ -98,8 +98,22 @@ const secondUser = {
     age: 40,
 };
 
-greetGuest.apply(secondUser, [`Hello`])
+greetGuest.apply(secondUser, [`Hello`]);
+/*або!!!*/
+greetGuest.call(secondUser, `Hello`);
 
+/*---------------------metod Bind---------------------*/
+const fordAuto = {
+    make: "Ford",
+    mark: "Mondeo",
+    wheels: 4,
+
+    getInfo() {
+        console.log(`${this.make} ${this.mark} has ${this.wheels} wheels.`);
+},
+};
+
+fordAuto.getInfo();
 
 class Storage  {
 constructor (items) {
