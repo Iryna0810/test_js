@@ -115,4 +115,4 @@ const user = { name: 'Iryna', age: 40 };
 const copiedUser = copyObj(user);
 console.log(copiedUser);
 /*--------------------------------------------------------------*/
-console.log(true + Number(" "))
+console.log(true + Number(""))
