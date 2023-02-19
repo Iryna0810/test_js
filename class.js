@@ -70,7 +70,7 @@ console.log(myNotes.items);
 //   set price(newPrice) {
 //       if (newPrice <= Car.MAX_PRICE) {
 //           this.#price = newPrice;
-//       }} 
+//       }}
 //   // Change code above this line
 // }
 
@@ -83,25 +83,36 @@ console.log(myNotes.items);
 // audi.price = 51000;
 // console.log(audi.price); // 49000
 
-class Car {
-    static #MAX_PRICE = 50000;
-    // Change code below this line
+// class Car {
+//     static #MAX_PRICE = 50000;
+//     // Change code below this line
 
-    // Change code above this line
-    constructor({ price }) {
-        this.price = price;
-    }
+//     // Change code above this line
+//     constructor({ price }) {
+//         this.price = price;
+//     }
 
-    static checkPrice(price) {
-        if (price > this.#MAX_PRICE) {
-            "Error! Price exceeds the maximum";
-        }
-        else "Success! Price is within acceptable limits";
+//     static checkPrice(price) {
+//         if (price > this.#MAX_PRICE) {
+//             "Error! Price exceeds the maximum";
+//         }
+//         else "Success! Price is within acceptable limits";
   
-    };
-}
-const audi = new Car({ price: 36000 });
-const bmw = new Car({ price: 64000 });
+//     };
+// }
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
 
-console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
-console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+/*-----------------КОПІЮВАННЯ ОБ'ЄКТІВ-------------------------*/
+/*1 метод через деструктиризацію за допомогою спред оператора (...arg)*/
+const copyObj = (obj) => ({ ...obj });
+/* 2 метод за допомогою Object.assign({}, obj)*/
+// const copyObj = (obj) => Object.assign({}, obj)
+const user = { name: 'Iryna', age: 40 };
+const copiedUser = copyObj(user);
+console.log(copiedUser);
+/*--------------------------------------------------------------*/
+console.log(true + Number(" "))
