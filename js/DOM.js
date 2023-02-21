@@ -27,6 +27,82 @@ console.log(navEl3);
 const firstNavItemEl = navEl3.firstElementChild;
 console.log(firstNavItemEl);
 
+const divEl = document.createElement('div');
+divEl.classList.add('js-color__options');
+navEl3.append(divEl);
+
+
+const colorPickerOptions = [
+    { label: 'red', color: '#f44366' },
+    { label: 'green', color: '#4caf50' },
+    { label: 'blue', color: '#2196f3' },
+    { label: 'pink', color: '#e91e63' },
+];
+
+const colorPickerContainerEl = document.querySelector(`.js-color__options`);
+
+// const elements = colorPickerOptions.map(option => {
+//     const buttonEl = document.createElement('button');
+//     buttonEl.type = 'button';
+//     buttonEl.classList.add('colorPickerOption');
+//     buttonEl.textContent = option.label;
+//     buttonEl.style.backgroundColor = option.color;
+//     buttonEl.style.width = '150px';
+
+//     return buttonEl;
+// });
+
+// console.log(elements);
+// colorPickerContainerEl.append(...elements);
+
+const makeColorPictureOptions = (options) => {
+    return options.map(
+        option => {
+            const buttonEl = document.createElement('button');
+            buttonEl.type = 'button';
+            buttonEl.classList.add('colorPickerOption');
+            buttonEl.textContent = option.label;
+            buttonEl.style.backgroundColor = option.color;
+            buttonEl.style.width = '150px';
+
+            return buttonEl;
+        }
+    )
+};
+const elements = makeColorPictureOptions(colorPickerOptions);
+colorPickerContainerEl.append(...elements);
+console.log(elements);
+
+const product = {
+    name: 'tulips',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam dolor accusantium consequuntur error dolorem a quod, veritatis aliquam odit eaque est aperiam possimus unde mollitia et earum eum tempore, eos aliquid corrupti impedit sunt aspernatur sapiente debitis. Cumque molestiae, repellendus inventore nihil ipsum error impedit. Reiciendis facilis unde quidem laborum.',
+    price: 50,
+    onSale: true,
+    available: true,
+    
+}
+
+const productEl = document.createElement('article');
+productEl.classList.add('product');
+
+const titleEl = document.createElement('h2');
+titleEl.textContent = product.name;
+titleEl.classList.add('product__name');
+
+const descrEl = document.createElement('p');
+descrEl.textContent = product.description;
+descrEl.classList.add('product__descr');
+
+const priceEl = document.createElement('p');
+priceEl.textContent = `Ціна за товар: ${product.price}`;
+priceEl.classList.add('product__price');
+
+
+console.log(descrEl);
+
+productEl.append(titleEl, descrEl, priceEl);
+
+console.log(productEl);
 
 
 
