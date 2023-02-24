@@ -105,6 +105,46 @@ productEl.append(titleEl, descrEl, priceEl);
 console.log(productEl);
 
 
+// const article = document.querySelector(".article");
+// console.log(article.innerHTML);
+
+// const title = document.querySelector(".article .title");
+// console.log(title.innerHTML);
+
+// const text = document.querySelector(".article .text");
+// console.log(text.innerHTML);
+
+// const link = document.querySelector(".article .link");
+// console.log(link.innerHTML);
+
+const title = document.querySelector(".article .title");
+title.innerHTML = 'New and <span class="accent">improved</span> title';
+
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+const list = document.querySelector(".list");
+
+const markup1 = technologies
+  .map((technology) => `<li class="list-item">${technology}</li>`)
+  .join("");
+
+// Check the console, you'll see a single string with HTML tags
+console.log(markup1);
+
+// Adding all the markup in one operation
+list.innerHTML = markup1;
+
+
+
+const list1 = document.querySelector(".list");
+
+const newTechnologies = ["React", "TypeScript", "Node.js"];
+const markup = newTechnologies
+  .map((technology) => `<li class="list-item new">${technology}</li>`)
+  .join("");
+
+list.insertAdjacentHTML("beforeend", markup);
+list.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
+
 
 
 
