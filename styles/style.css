@@ -38,12 +38,11 @@ body {
 }
 body {
     display: flex;
-    justify-content: center;
+    justify-content: first baseline;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
     padding: 1rem;
-    text-align: center;
 }
 .list {
     padding: 0;
@@ -79,3 +78,22 @@ body {
 .list-item:not(:last-child) {
     margin-bottom: 8px;
 }
+
+.js-box {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .box-in {
+    width: 75px;
+    height: 75px;
+    background-color: yellow;
+
+ }
+
+ .box-active {
+    background-color: red;
+ }
