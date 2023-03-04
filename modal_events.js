@@ -9,3 +9,8 @@ refs.openModalBtn.addEventListener('click', handleOpenModal);
 function handleOpenModal() {
     document.body.classList.add('show-modal');
 }
+
+refs.closeModalBtn.addEventListener('click', handleCloseModal);
+function handleCloseModal() {
+    document.body.classList.remove('show-modal')
+};
