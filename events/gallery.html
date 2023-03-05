@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="
-https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
-" rel="stylesheet">
+    <link rel="stylesheet" href="dist/basicLightbox.min.css">
+    <link href="
+    https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
+    " rel="stylesheet"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
     <title>Gallery</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    
 <style>
     .feed {
         list-style: none;
+    }
+    .feed img{
+        transform: translateX(-50%);
+opacity: 0;
+transition: all 1s linear 2s;
+object-fit: cover;
+
     }
 
     .feed li:not(:last-child) {
@@ -22,7 +33,7 @@ https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
         transform: translateX(0);
         opacity: 1;
     }
-    
+
 </style>
 </head>
 <body>
@@ -30,15 +41,26 @@ https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
     <p class="title">
         <a href="http://google.com">Посилання</a>
     </p>
-    <ul class="images-list">
+    <ul class="gallery-test feed">
 
     </ul>
 
-    <!-- <script src="./gallery-items.js"></script> -->
-<script src="./gallery.js" type="module"></script>
+    <!-- <script src="./gallery-items.js1"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+        integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="dist/basicLightbox.min.js"></script>
+        <script src="./gallery.js" type="module"></script>
+<!-- <script src="dist/basicLightbox.min.js"></script> -->
 
-<script src="
+<!-- <script src="
 https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js
-"></script>
+"></script> -->
 </body>
 </html>
+
+<!-- <img src="" alt=""
+width="600px"
+height="300px"
+loading="lazy"
+> -->
