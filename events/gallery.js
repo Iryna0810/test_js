@@ -17,11 +17,3 @@ const markup = galleryItems.map((data) => makeGalleryCard(data)).join("");
 imagesList.insertAdjacentHTML('afterbegin', markup);
 
 
-// import * as basicLightbox from 'basiclightbox'
-
-// const instance = basicLightbox.create(`
-//     <img src="assets/images/image.png" width="800" height="600">
-// `)
-
-// instance.show()
-

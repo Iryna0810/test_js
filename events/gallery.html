@@ -9,6 +9,21 @@ https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
 " rel="stylesheet">
     <title>Gallery</title>
     <link rel="stylesheet" href="./styles/style.css">
+<style>
+    .feed {
+        list-style: none;
+    }
+
+    .feed li:not(:last-child) {
+        margin-bottom: 32px;
+    }
+
+    .feed img.appear {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+</style>
 </head>
 <body>
     <h2>Заголовок</h2>
